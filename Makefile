@@ -1,16 +1,27 @@
-CFLAGS = -g -Wall 
+CFLAGS = -g -Wall -Werror=return-type -Werror=uninitialized
 CC = g++
 
-objects = Main.o FileProcessor.o PasswordGenerator.o HashTable.o
+OBJECTS = Main.o FileProcessor.o PasswordGenerator.o HashTable.o
+TESTS = t1-hashtable
+CATCH = test/catch/catch_amalgamated.o
 
-main: $(objects)
-	$(CC) -o Main $(objects)
+# program related compilation
+main: $(OBJECTS)
+	$(CC) -o $@ $^
 
-HashTable.o : HashTable.cpp
-FileProcessor.o : FileProcessor.h FileProcessor.cpp
-PasswordGenerator.o : PasswordGenerator.h PasswordGenerator.cpp
-Main.o : Main.cpp
+%.o: %.cpp
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
+# RM is a implicit variable, make -p for more info
 .PHONY : clean
 clean: 
-	rm Main $(objects)
+	$(RM) *.o test/*.o $(addprefix test/,$(TESTS)) main core
+
+# test related compilation, $@ means target name, $^ targets dependencies
+$(TESTS): $(CATCH)
+	$(CC) $(CFLAGS) -o test/$@ $^
+	test/$@ --success
+
+test-all: $(TESTS)
+t1-hashtable: test/t1-hashtable.cpp HashTable.o
+

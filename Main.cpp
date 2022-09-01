@@ -1,8 +1,12 @@
 #include <iostream>
+#include "HashTable.h"
+#include <string>
 
 using namespace std;
 
 int main(void) {
-    cout << "Hello world" << endl;
+    HashTable h(128);
+    cout << h.getCapacity() << endl;
+
     return 0;
 }

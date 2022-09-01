@@ -1,13 +1,23 @@
-#ifndef HASHTABLE_CPP
-#define HASHTABLE_CPP
+#include "HashTable.h"
 
-//template<class K, class V>
-class HashTable {
-    public:
-        int test() {
-            return 0;
-        }
-};
+HashTable::HashTable(int capacity) {
+    this->size = 0;
+    this->capacity = capacity;
+    this->buckets.resize(capacity);
+}
 
+int HashTable::hash(string key) {
+    int hashValue = 0;
+    for (long unsigned i = 0; i < key.length(); i++) {
+        hashValue = (key[i] * i + hashValue) % capacity;
+    }
+    return hashValue;
+}
 
-#endif
+int HashTable::getCapacity() {
+    return capacity;
+}
+
+int HashTable::getSize() {
+    return size;
+}
