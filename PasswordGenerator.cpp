@@ -10,7 +10,7 @@ PasswordGenerator::PasswordGenerator() {
  * @return string the encrypted password
  */
 string PasswordGenerator::encrypt(string rawPwd) {
-
+    return "Hi";
 }
 
 /**
@@ -29,4 +29,5 @@ string PasswordGenerator::generateRawPwd() {
 
 char getRandomLetter() {
     char c = rand() % 97 + 122;
+    return c;
 }

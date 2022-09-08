@@ -2,7 +2,7 @@ CFLAGS = -g -Wall -Werror=return-type -Werror=uninitialized
 CC = g++
 
 OBJECTS = main.o FileProcessor.o PasswordGenerator.o HashTable.o
-TESTS = t1-hashtable
+TESTS = t1-hashtable t1-passwordgenerator
 CATCH = test/catch/catch_amalgamated.o
 
 # program related compilation
@@ -24,4 +24,5 @@ $(TESTS): $(CATCH)
 
 test-all: $(TESTS)
 t1-hashtable: test/t1-hashtable.cpp HashTable.o
+t1-passwordgenerator: test/t1-passwordgenerator.cpp PasswordGenerator.o
 
