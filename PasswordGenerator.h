@@ -3,14 +3,15 @@
 
 #include <string>
 #include <stdlib.h>
-#include <time.h> 
+#include <time.h>
+#include <cmath>
 
 using namespace std;
 
 class PasswordGenerator {
     public:
         PasswordGenerator();
-        string encrypt(string rawPwd);
+        string encrypt(string rawPwd, string key);
         string generateRawPwd();
         char getRandomLetter();
 };
