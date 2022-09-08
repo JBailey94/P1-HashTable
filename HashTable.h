@@ -11,6 +11,7 @@ class HashNode {
 public:
     string key;
     int value;
+    HashNode(string key, int value);
 };
 
 class HashTable {
@@ -23,6 +24,10 @@ public:
     int hash(string key);
     int getCapacity();
     int getSize();
+    bool insert(string key, int value);
+    bool remove(string key);
+    bool exist(string key);
+    vector<HashNode> getBucket(string key);
 };
 
 #endif
