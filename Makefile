@@ -1,7 +1,7 @@
 CFLAGS = -g -Wall -Werror=return-type -Werror=uninitialized
 CC = g++
 
-OBJECTS = Main.o FileProcessor.o PasswordGenerator.o HashTable.o
+OBJECTS = main.o FileProcessor.o PasswordGenerator.o HashTable.o
 TESTS = t1-hashtable
 CATCH = test/catch/catch_amalgamated.o
 

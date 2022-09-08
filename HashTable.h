@@ -27,7 +27,6 @@ public:
     bool insert(string key, int value);
     bool remove(string key);
     bool exist(string key);
-    vector<HashNode> getBucket(string key);
 };
 
 #endif

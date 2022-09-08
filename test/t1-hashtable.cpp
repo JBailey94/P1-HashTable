@@ -34,3 +34,17 @@ TEST_CASE("Test inserting and removing nodes") {
 
     REQUIRE(ht.getSize() == 0);
 }
+
+TEST_CASE("Test the exist() function") {
+    HashTable ht(8);
+
+    ht.insert("test1", 1);
+    ht.insert("test2", 2);
+    ht.insert("test3", 3);
+
+    ht.remove("test2");
+
+    REQUIRE(ht.exist("test1") == true);
+    REQUIRE(ht.exist("test2") == false);
+    REQUIRE(ht.exist("test3") == true);
+}

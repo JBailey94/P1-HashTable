@@ -21,9 +21,9 @@ int HashTable::hash(string key) {
 
 bool HashTable::insert(string key, int value) {
     if(!exist(key)) {
-        vector<HashNode> currentBucket = this->getBucket(key);
         HashNode node(key, value);
-        currentBucket.push_back(node);
+        int position = hash(key);
+        this->buckets.at(position).push_back(node);
         this->size++;
         return true;
     }
@@ -32,12 +32,11 @@ bool HashTable::insert(string key, int value) {
 }
 
 bool HashTable::remove(string key) {
-    vector<HashNode> currentBucket = this->getBucket(key);
-
-    if (currentBucket.size() > 0) {
-        for (auto iterator = currentBucket.begin(); iterator != currentBucket.end(); iterator++) {
+    int position = this->hash(key);
+    if (buckets.at(position).size() > 0) {
+        for (auto iterator = buckets.at(position).begin(); iterator != buckets.at(position).end(); iterator++) {
             if (iterator->key == key) {
-                currentBucket.erase(iterator);
+                buckets.at(position).erase(iterator);
                 this->size--;
                 return true;
             }
@@ -53,10 +52,10 @@ bool HashTable::remove(string key) {
  * @return false if key does not exist
  */
 bool HashTable::exist(string key) {
-    vector<HashNode> currentBucket = this->getBucket(key);
+    int position = hash(key);
 
-    if (currentBucket.size() > 0) {
-        for (HashNode node : currentBucket) {
+    if (buckets.at(position).size() > 0) {
+        for (HashNode node : buckets.at(position)) {
             if (node.key == key) {
                 return true;
             }
@@ -72,15 +71,4 @@ int HashTable::getCapacity() {
 
 int HashTable::getSize() {
     return size;
-}
-
-/**
- * @brief returns the bucket of a hash
- * @param key the key to obtain bucket
- * @return vector<HashNode> bucket 
- */
-vector<HashNode> HashTable::getBucket(string key) {
-    int hash = this->hash(key);
-    vector<HashNode> bucket = buckets.at(hash);
-    return bucket;
 }
