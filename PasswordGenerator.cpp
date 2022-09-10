@@ -14,6 +14,8 @@ string PasswordGenerator::encrypt(string rawPwd, string key) {
     int keyIndex = 0;
     int sum = 0;
     
+    transform(key.begin(), key.end(), key.begin(), ::tolower);
+
     for (int i = 0; i < rawPwd.length(); i++) {
         if (keyIndex >= key.length()) {
             keyIndex = 0;

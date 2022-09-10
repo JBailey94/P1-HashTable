@@ -1,6 +1,6 @@
 #include "HashTable.h"
 
-HashNode::HashNode(string key, int value) {
+HashNode::HashNode(string key, string value) {
     this->key = key;
     this->value = value;
 }
@@ -19,7 +19,7 @@ int HashTable::hash(string key) {
     return hashValue;
 }
 
-bool HashTable::insert(string key, int value) {
+bool HashTable::insert(string key, string value) {
     if(!exist(key)) {
         HashNode node(key, value);
         int position = hash(key);
@@ -63,6 +63,26 @@ bool HashTable::exist(string key) {
     }
     
     return false;
+}
+
+/**
+ * @brief Find and return a value for a corresponding key
+ * @param key the key to search for
+ * @return Pointer to the HashNode
+ * @return nullptr if the HashNode does not exist
+ */
+string HashTable::find(string key) {
+    int position = hash(key);
+
+    if (buckets.at(position).size() > 0) {
+        for (HashNode node : buckets.at(position)) {
+            if (node.key == key) {
+                return node.value;
+            }
+        }
+    }
+    
+    return "";
 }
 
 int HashTable::getCapacity() {

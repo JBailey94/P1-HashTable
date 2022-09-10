@@ -10,8 +10,8 @@ using namespace std;
 class HashNode {
 public:
     string key;
-    int value;
-    HashNode(string key, int value);
+    string value;
+    HashNode(string key, string value);
 };
 
 class HashTable {
@@ -24,9 +24,10 @@ public:
     int hash(string key);
     int getCapacity();
     int getSize();
-    bool insert(string key, int value);
+    bool insert(string key, string value);
     bool remove(string key);
     bool exist(string key);
+    string find(string key);
 };
 
 #endif
