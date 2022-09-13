@@ -1,4 +1,4 @@
-#include "FileProcessor.h"
+#include "FileProcessor.hpp"
 
 int FileProcessor::genRawDataFile(string inputFilePath, string rawDataFilePath)
 {

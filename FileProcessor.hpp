@@ -1,5 +1,13 @@
-#ifndef FILEPROCESSOR_H
-#define FILEPROCESSOR_H
+/**
+ * @file FileProcessor.hpp
+ * @author Jesse Lynn-Bailey jjl47@students.uwf.edu
+ * @brief Handles password file generation and loading.
+ * @version 0.1
+ * @date 2022-09-13
+ */
+
+#ifndef FILEPROCESSOR_HPP
+#define FILEPROCESSOR_HPP
 
 #include <string>
 #include <vector>
@@ -7,8 +15,8 @@
 #include <iostream>
 #include <sstream>
 
-#include "PasswordGenerator.h"
-#include "HashTable.h"
+#include "PasswordGenerator.hpp"
+#include "HashTable.hpp"
 
 using namespace std;
 

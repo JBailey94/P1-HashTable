@@ -1,9 +1,17 @@
+/**
+ * @file main.cpp
+ * @author Jesse Lynn-Bailey (jjl47@students.uwf.edu)
+ * @brief Prints out two legal and illegal tables of password combinations.
+ * @version 0.1
+ * @date 2022-09-13
+ */
+
 #include <iostream>
 #include <string>
 
-#include "FileProcessor.h"
-#include "HashTable.h"
-#include "PasswordGenerator.h"
+#include "FileProcessor.hpp"
+#include "HashTable.hpp"
+#include "PasswordGenerator.hpp"
 #include "iomanip"
 
 using namespace std;

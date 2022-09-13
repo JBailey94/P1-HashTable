@@ -1,5 +1,5 @@
 #include "catch/catch_amalgamated.hpp"
-#include "../PasswordGenerator.h"
+#include "../PasswordGenerator.hpp"
 #include <iostream>
 
 using namespace std;

@@ -1,4 +1,4 @@
-#include "HashTable.h"
+#include "HashTable.hpp"
 
 HashNode::HashNode(string key, string value) {
     this->key = key;

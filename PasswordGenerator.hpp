@@ -1,5 +1,13 @@
-#ifndef PASSWORDGENERATOR_H
-#define PASSWORDGENERATOR_H
+/**
+ * @file PasswordGenerator.hpp
+ * @author Jesse Lynn-Bailey (jjl47@students.uwf.edu)
+ * @brief Handles password generation and encryption
+ * @version 0.1
+ * @date 2022-09-13
+ */
+
+#ifndef PASSWORDGENERATOR_HPP
+#define PASSWORDGENERATOR_HPP
 
 #include <string>
 #include <stdlib.h>

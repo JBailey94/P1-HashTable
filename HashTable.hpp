@@ -1,5 +1,13 @@
-#ifndef HASHTABLE_H
-#define HASHTABLE_H
+/**
+ * @file HashTable.hpp
+ * @author Jesse Lynn-Bailey (jjl47@students.uwf.edu)
+ * @brief Custom implementation of a hash table
+ * @version 0.1
+ * @date 2022-09-13
+ */
+
+#ifndef HASHTABLE_HPP
+#define HASHTABLE_HPP
 
 #include <string>
 #include <vector>

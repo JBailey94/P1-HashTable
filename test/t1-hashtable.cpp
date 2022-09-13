@@ -1,5 +1,5 @@
 #include "catch/catch_amalgamated.hpp"
-#include "../HashTable.h"
+#include "../HashTable.hpp"
 
 #include <iostream>
 using namespace std;
@@ -22,9 +22,9 @@ TEST_CASE("Test the hash function") {
 TEST_CASE("Test inserting and removing nodes") {
     HashTable ht(8);
 
-    ht.insert("test", 123);
-    ht.insert("test2", 456);
-    ht.insert("test3", 789);
+    ht.insert("test", "123");
+    ht.insert("test2", "456");
+    ht.insert("test3", "789");
 
     REQUIRE(ht.getSize() == 3);
 
@@ -38,9 +38,9 @@ TEST_CASE("Test inserting and removing nodes") {
 TEST_CASE("Test the exist() function") {
     HashTable ht(8);
 
-    ht.insert("test1", 1);
-    ht.insert("test2", 2);
-    ht.insert("test3", 3);
+    ht.insert("test1", "1");
+    ht.insert("test2", "2");
+    ht.insert("test3", "3");
 
     ht.remove("test2");
 

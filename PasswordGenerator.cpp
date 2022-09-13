@@ -1,4 +1,4 @@
-#include "PasswordGenerator.h"
+#include "PasswordGenerator.hpp"
 
 PasswordGenerator::PasswordGenerator() {
     srand(time(NULL));
